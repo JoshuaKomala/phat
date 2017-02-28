@@ -2,9 +2,10 @@ import java.io.*;
 import java.util.*;
 public class CSVReader{
 	String fileToRead;
-
+	ArrayList<String[]> csv;
 	public CSVReader(String file){
 		fileToRead = file;
+		csv = new ArrayList<String[]>();
 	}
 
 
@@ -14,7 +15,6 @@ public class CSVReader{
     	String csvFile = this.fileToRead;
         String line = "";
         String cvsSplitBy = ",";
-        ArrayList<String[]> csv = new ArrayList<String[]>();
         String[] row = null;
 
         try (BufferedReader br = new BufferedReader(new FileReader(csvFile))) {
@@ -38,10 +38,31 @@ public class CSVReader{
         }
     }
 
+    public void printColumn(String[] cols){
+    	String[] titles = csv.get(0);
+    	int[] colsIndex = new int[cols.length];
+    	for(int i = 0 ; i < cols.length; i++){
+    		for(int j = 0; j < titles.length; j++){
+	    		if(titles[j].equals(cols[i])){
+	    			colsIndex[i] = j;
+	    		}
+    			
+    		}
+    	}
+    	for(String[] r : csv){
+    		for(int i = 0 ; i < colsIndex.length; i++){
+
+	        	System.out.print(r[colsIndex[i]] + " \t ");
+    		}
+    		System.out.println();
+        }
+    }
+
 
     public static void main(String[] args) {
     	CSVReader reader = new CSVReader(args[0]);
     	reader.convertToList();
+    	reader.printColumn(Arrays.copyOfRange(args, 1, args.length));
 
         
     }
