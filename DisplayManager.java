@@ -1,4 +1,4 @@
-
+import java.util.List;
 
 /**
  * Display Manager Interface.
@@ -12,4 +12,10 @@
  */
 public interface DisplayManager {
 
+	/**
+	 * Required Display Method
+	 * 
+	 * <p> Displays the data
+	 */
+	public void display (List<String[]> data);
 }
