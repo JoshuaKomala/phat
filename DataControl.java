@@ -28,7 +28,7 @@ public class DataControl {
 	 * now until default ones are created) 
 	 */
 	public DataControl () {
-		 fileParser = new CSVReader();
+		 fileParser = new CSVParser();
 	}
 	
 	/**
