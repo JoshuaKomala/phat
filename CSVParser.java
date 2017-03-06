@@ -9,7 +9,10 @@ public class CSVParser implements FileParser {
 	public CSVParser(){}
 	
 	/**
-	 * Reads the file and converts to ArrayList
+	 * Reads the file and converts to ArrayList 
+	 * 
+	 * @param fileName - The name of the file to read
+	 * @return ArrayList<String[]> - List for other parts of the program to use
 	 */
 	@Override
     public List<String[]> read(String fileName){
@@ -22,25 +25,14 @@ public class CSVParser implements FileParser {
         
         // Read through file and place into ArrayList to be returned
         try (BufferedReader br = new BufferedReader(new FileReader(csvFile))) {
-
             while ((line = br.readLine()) != null) {
-     
                 // use comma as separator
                 row = line.split(cvsSplitBy);
                	csv.add(row);
-
-                // System.out.println("Country [code= " + country[4] + " , name=" + country[5] + "]");
-
             }
-
         } catch (IOException e) {
             e.printStackTrace();
         }
-
-        // Testing output
-        /*for(String[] r : csv){
-        	System.out.println(Arrays.toString(r));
-        }*/
         return csv;
     }
 }

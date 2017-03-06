@@ -1,3 +1,8 @@
+/**
+ * @name ListManager
+ * @author Jonah Cruz
+ * @date 3/2/17
+ */
 
 
 /**

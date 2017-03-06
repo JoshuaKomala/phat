@@ -1,10 +1,11 @@
-import java.util.List;
-
 /**
  * @name DataControl
  * @author Jonah Cruz
  * @date 3/2/17
  */
+
+import java.util.List;
+
 
 /**
  * Data Control Class.
@@ -21,22 +22,23 @@ public class DataControl {
 	private DataAnalyzer dataAnalyzer;
 	private DataManager dataManager;
 	private FileParser fileParser;
-	private List<String[]> data; // Temporary while DataManager is implemented
 	
 	/** 
-	 * Default Constructor (DataAnalyzer and DataManager is left blank for 
-	 * now until default ones are created) 
+	 * Default Constructor (DataAnalyzer is left blank for 
+	 * now until default one is created) 
 	 */
 	public DataControl () {
-		 fileParser = new CSVParser();
+		 fileParser = new CSVParser();		// Temporary Default Parser
+		 dataManager = new ListManager();	// Temporary Default data manager
 	}
 	
 	/**
-	 * Processes data from a particular file
+	 * Processes data from a particular file. Data is stored directly into 
+	 * data manager.
 	 * @param fileName - name of file to process data from
 	 */
 	public void processData(String fileName) {
-		data = fileParser.read(fileName);
+		dataManager.setData(fileParser.read(fileName));
 	}
 	
 	/**
@@ -44,6 +46,6 @@ public class DataControl {
 	 * @return
 	 */
 	public List<String[]> getData () {
-		return data; // Temporary until DataManager is implemented
+		return dataManager.getData();
 	}
 }
