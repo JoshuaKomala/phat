@@ -42,7 +42,7 @@ public class DataControl {
 	}
 	
 	/**
-	 * Retrieves the data in the form ready to be displayed
+	 * Retrieves the data in the form ready to be displayed 
 	 * @return
 	 */
 	public List<String[]> getData () {

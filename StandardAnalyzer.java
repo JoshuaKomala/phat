@@ -1,21 +1,21 @@
 /**
- * @name DataAnalyzer
+ * @name StandardAnalyzer
  * @author Jonah Cruz
- * @date 3/2/17
+ * @date 3/8/17
  */
 
 
 /**
- * Data Analyzer Interface.
+ * Standard Analyzer Class.
  * 
- * <p>Outlines methods/behaviors required of classes that are created for 
- * analyzing data.
+ * <p>Class implementation of the DataAnalyzer interface for basic
+ * data analysis.
  * 
  * @author Jonah Cruz
  * @version 1.0
- * @date 3/2/17
+ * @date 3/8/17
  */
-public interface DataAnalyzer {
+public StandardAnalyzer implements DataAnalyzer {
 
 	/**
 	 * Analyzes the data passed in to be displayed.
@@ -23,5 +23,7 @@ public interface DataAnalyzer {
 	 * @param filters - Filters to specify how to analyze data
 	 * @return - The formated data ready to be displayed
 	 */
-	public List<String[]> analyze(List<String[]> data, List<String> filters);
+	public List<String[]> analyze(List<String[]> data, List<String> filters) {
+		return null;
+	}
 }
