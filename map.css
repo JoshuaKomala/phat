@@ -19,3 +19,5 @@ html, body {
   margin: 0;
   padding: 0;
 }
+
+.gm-style-mtc > div, .gm-style > div, .gm-style-cc > div, .gm-style, .gm-err-message, .gm-err-title {font-family:sans-serif !important;} 
