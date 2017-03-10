@@ -9,8 +9,7 @@ After every 500 successul geocode operations, a temporary file with results is r
 script failure / loss of connection later.
 Addresses and data are held in memory, so this script may need to be adjusted to process files line
 by line if you are processing millions of entries.
-Shane Lynn
-5th November 2016
+http://www.shanelynn.ie/batch-geocoding-in-python-with-google-geocoding-api/
 """
 
 import pandas as pd
