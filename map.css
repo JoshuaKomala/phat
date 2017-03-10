@@ -2,6 +2,16 @@
  * element that contains the map. */
 #map {
   height: 100%;
+	position: relative;
+}
+
+
+img {
+    position: absolute;
+    top: 5%;
+    left: 3%;
+    margin-left: -50px;
+		max-width: 200px;
 }
 /* Optional: Makes the sample page fill the window. */
 html, body {
