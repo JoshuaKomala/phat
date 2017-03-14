@@ -18,8 +18,8 @@ public class Client {
 
 	public static void main(String[] args) {
 		MasterControl control = new MasterControl();
-		//control.run(args[0]);
-		control.run("");
+		control.run(args[0]);
+		//control.run("");
 	}
 
 }

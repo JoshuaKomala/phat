@@ -47,12 +47,9 @@ public class MasterControl {
 	 * <p> Temporarily passes a file to run from client
 	 */
 	public void run(String fileName) {
-		//dataControl.processData(fileName);
+		dataControl.processData(fileName);
 		//displayManager.display(dataControl.getData());
 
 		displayManager.display();
-		System.out.println("Test1");
-
-
 	}
 }
