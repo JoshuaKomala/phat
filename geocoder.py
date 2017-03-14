@@ -11,7 +11,7 @@ Addresses and data are held in memory, so this script may need to be adjusted to
 by line if you are processing millions of entries.
 http://www.shanelynn.ie/batch-geocoding-in-python-with-google-geocoding-api/
 """
-
+import sys
 import pandas as pd
 import requests
 import logging
@@ -36,9 +36,9 @@ API_KEY = 'AIzaSyAYm6JYlCBAv_oma0reMm1nn1eBs7S-G2E'
 # Backoff time sets how many minutes to wait between google pings when your API limit is hit
 BACKOFF_TIME = 30
 # Set your output file name here.
-output_filename = 'out.csv'
+output_filename = sys.argv[2]
 # Set your input file here
-input_filename = "nepal.csv"
+input_filename = sys.argv[1]
 # Specify the column name in your input data that contains addresses here
 address_column_name = "Address"
 # Return Full Google Results? If True, full JSON results from Google are included in output
@@ -168,5 +168,7 @@ for address in addresses:
 
 # All done
 logger.info("Finished geocoding all addresses")
+# Combine with the original data
+toOutput = pd.DataFrame(results).join(data, how="outer")
 # Write the full results to csv using the pandas library.
-pd.DataFrame(results).to_csv(output_filename, encoding='utf8')
+pd.DataFrame(toOutput).to_csv(output_filename, encoding='utf8')

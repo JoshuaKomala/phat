@@ -30,15 +30,16 @@ public class DataControl {
 	public DataControl () {
 		 fileParser = new CSVParser();		// Temporary Default Parser
 		 dataManager = new ListManager();	// Temporary Default data manager
+		 dataAnalyzer = new CSVFormatter();
 	}
 	
 	/**
-	 * Processes data from a particular file. Data is stored directly into 
-	 * data manager.
+	 * Processes data from a particular file.
 	 * @param fileName - name of file to process data from
 	 */
 	public void processData(String fileName) {
-		dataManager.setData(fileParser.read(fileName));
+		//dataManager.setData(fileParser.read(fileName));
+		dataManager.analyze(fileName);
 	}
 	
 	/**

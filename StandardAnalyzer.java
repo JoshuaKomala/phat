@@ -3,7 +3,7 @@
  * @author Jonah Cruz
  * @date 3/8/17
  */
-
+import java.util.List;
 
 /**
  * Standard Analyzer Class.
@@ -15,7 +15,7 @@
  * @version 1.0
  * @date 3/8/17
  */
-public StandardAnalyzer implements DataAnalyzer {
+public class StandardAnalyzer implements DataAnalyzer {
 
 	/**
 	 * Analyzes the data passed in to be displayed.

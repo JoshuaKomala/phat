@@ -3,6 +3,7 @@
  * @author Jonah Cruz
  * @date 3/2/17
  */
+import java.util.*;
 
 /**
  * Client.
@@ -18,6 +19,7 @@ public class Client {
 	public static void main(String[] args) {
 		MasterControl control = new MasterControl();
 		control.run(args[0]);
+		//control.run("");
 	}
 
 }

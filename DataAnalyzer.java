@@ -4,6 +4,7 @@
  * @date 3/2/17
  */
 
+import java.util.List;
 
 /**
  * Data Analyzer Interface.
@@ -19,9 +20,8 @@ public interface DataAnalyzer {
 
 	/**
 	 * Analyzes the data passed in to be displayed.
-	 * @param data - The data to be analyzed for display
-	 * @param filters - Filters to specify how to analyze data
-	 * @return - The formated data ready to be displayed
+	 * @param args - command line arguments passed in (includes in file name and 
+	 * out file name)
 	 */
-	public List<String[]> analyze(List<String[]> data, List<String> filters);
+	public void analyze(String fileName);
 }
