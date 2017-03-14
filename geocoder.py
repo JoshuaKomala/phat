@@ -168,5 +168,7 @@ for address in addresses:
 
 # All done
 logger.info("Finished geocoding all addresses")
+# Combine with the original data
+toOutput = pd.DataFrame(results).join(data, how="outer")
 # Write the full results to csv using the pandas library.
-pd.DataFrame(results).to_csv(output_filename, encoding='utf8')
+pd.DataFrame(toOutput).to_csv(output_filename, encoding='utf8')
