@@ -4,6 +4,7 @@
  * @date 3/2/17
  */
 
+import java.util.List;
 
 /**
  * Data Analyzer Interface.

@@ -17,5 +17,5 @@ public interface DisplayManager {
 	 * 
 	 * <p> Displays the data
 	 */
-	public void display (List<String[]> data);
+	public void display ();
 }

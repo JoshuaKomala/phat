@@ -3,6 +3,9 @@
  * @author Jonah Cruz
  * @date 3/2/17
  */
+import java.util.*;
+import javax.swing.*;
+import java.awt.*;
 
 /**
  * Master controller for the model and view.
@@ -25,7 +28,8 @@ public class MasterControl {
 	 * Default Contructor (Temporarily using ConsoleDisplay as default)
 	 */
 	public MasterControl () {
-		displayManager = new ConsoleDisplay();
+		//displayManager = new ConsoleDisplay();
+		displayManager = new MapManager();
 		dataControl = new DataControl();
 	}
 	
@@ -43,7 +47,12 @@ public class MasterControl {
 	 * <p> Temporarily passes a file to run from client
 	 */
 	public void run(String fileName) {
-		dataControl.processData(fileName);
-		displayManager.display(dataControl.getData());
+		//dataControl.processData(fileName);
+		//displayManager.display(dataControl.getData());
+
+		displayManager.display();
+		System.out.println("Test1");
+
+
 	}
 }
