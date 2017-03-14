@@ -1,0 +1,6 @@
+{
+"type": "FeatureCollection",
+
+"features": [
+{ "type": "Feature", "id": 0, "properties": { "HQ_NAME": "Biratnagar" }, "geometry": { "type": "Point", "coordinates": [ 87.279457092285156, 26.458152770996094 ] } }
+]}
