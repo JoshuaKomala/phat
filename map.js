@@ -31,16 +31,16 @@ window.eqfeed_callback = function(results) {
 
 		google.maps.event.addListener(marker, 'click', ((x)=>function() {
 
-
+      let infoStr = "";
 			for (var key in results.features[x].properties){
 
 				if(results.features[x].properties.hasOwnProperty(key)){
-					infowindow.setContent('<div><strong> Information: </strong><br>'  + results.features[x].properties[key]+ '</div>');
-					console.log(results.features[x].properties[key]);
+					infoStr += '<div><strong>' + key + ': </strong><br>'  + results.features[x].properties[key]+ '</div>';
+					//console.log(results.features[x].properties[key]);
 				}
 			}
 
-
+      infowindow.setContent(infoStr);
 			infowindow.open(map, this);
 
 
