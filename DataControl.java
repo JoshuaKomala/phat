@@ -39,7 +39,7 @@ public class DataControl {
 	 */
 	public void processData(String fileName) {
 		//dataManager.setData(fileParser.read(fileName));
-		dataManager.analyze(fileName);
+		dataAnalyzer.analyze(fileName);
 	}
 	
 	/**

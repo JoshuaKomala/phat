@@ -39,9 +39,9 @@ public class CSVFormatter implements DataAnalyzer {
 	private void formatCSV(String fileName, String outFileName) {
 		// Runs geocoder.py and passes in args to to the python script  
 		try {
-			String cmd = "python geocoder.py " + fileName + " " + ourFileName; 
+			String cmd = "python geocoder.py " + fileName + " " + outFileName; 
 			Process p = Runtime.getRuntime().exec(cmd);
-			BufferedReader in = new BufferedReader(new InputStreamReader(p.getInputStream()));
+			//BufferedReader in = new BufferedReader(new InputStreamReader(p.getInputStream()));
 		} catch (IOException e) {
 			System.out.println("Failed to read file.");
 		}
@@ -55,9 +55,9 @@ public class CSVFormatter implements DataAnalyzer {
 	private void convertCSV(String fileName, String outFileName) {
 		// Runs geocoder.py and passes in args to to the python script  
 		try {
-			String cmd = "python GeojsonConverter.py " + fileName + " " + ourFileName; 
+			String cmd = "python GeojsonConverter.py " + fileName + " " + outFileName; 
 			Process p = Runtime.getRuntime().exec(cmd);
-			BufferedReader in = new BufferedReader(new InputStreamReader(p.getInputStream()));
+			//BufferedReader in = new BufferedReader(new InputStreamReader(p.getInputStream()));
 		} catch (IOException e) {
 			System.out.println("Failed to read file.");
 		}

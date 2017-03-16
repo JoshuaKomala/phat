@@ -4,7 +4,7 @@
  * @date 3/9/17
  */
 
-import java.util.List;
+//import java.util.List;
 /*
 import jxbrowser.Browser;
 import jxbrowser.BrowserFactory;
@@ -56,7 +56,7 @@ public class MapManager implements DisplayManager {
 		frame.setVisible(true);
 		swingbox.setPage(new URL("http://cssbox.sourceforge.net"));
 		*/
-		System.out.println("TestTest");
+		//System.out.println("TestTest");
 		
 		JEditorPane jep = new JEditorPane();
 		jep.setEditable(false);   
