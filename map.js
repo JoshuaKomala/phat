@@ -13,7 +13,7 @@ function initMap() {
   var script = document.createElement('script');
   // This example uses a local copy of the GeoJSON stored at
   // http://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/2.5_week.geojsonp
-  script.src = 'geo2.js';
+  script.src = 'geo3.js';
   document.getElementsByTagName('head')[0].appendChild(script);
 }
 

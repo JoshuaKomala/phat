@@ -4,7 +4,7 @@
  * @date 3/2/17
  */
 
-//import java.util.List;
+import java.util.List;
 
 /**
  * Data Analyzer Interface.
@@ -23,5 +23,5 @@ public interface DataAnalyzer {
 	 * @param args - command line arguments passed in (includes in file name and 
 	 * out file name)
 	 */
-	public void analyze(String fileName);
+	public List<String[]> analyze(List<String[]> data, List<String> filters); 
 }
