@@ -35,7 +35,7 @@ class Browser extends Region {
 	public Browser() {
 		// load the web page
 		
-		webEngine.load(getClass().getResource("map.html").t‌​oExternalForm());
+		webEngine.load(getClass().getResource("map.html").toExternalForm());
 		
 		//add the web view to the scene
 		getChildren().add(browser);

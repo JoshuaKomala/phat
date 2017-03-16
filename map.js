@@ -30,9 +30,20 @@ window.eqfeed_callback = function(results) {
 		infowindow = new google.maps.InfoWindow();
 
 		google.maps.event.addListener(marker, 'click', ((x)=>function() {
-			infowindow.setContent('<div><strong> HII </strong><br>'  + results.features[x].properties.formatted_address+ '</div>');
+
+      let infoStr = "";
+			for (var key in results.features[x].properties){
+
+				if(results.features[x].properties.hasOwnProperty(key)){
+					infoStr += '<div><strong>' + key + ': </strong><br>'  + results.features[x].properties[key]+ '</div>';
+					//console.log(results.features[x].properties[key]);
+				}
+			}
+
+      infowindow.setContent(infoStr);
 			infowindow.open(map, this);
-			console.log(results.features[x].properties.formatted_address);
+
+
 		})(i));
 
 
