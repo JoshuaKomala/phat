@@ -8,10 +8,10 @@ import java.util.List;
 
 /**
  * Data Analyzer Interface.
- * 
- * <p>Outlines methods/behaviors required of classes that are created for 
+ *
+ * <p>Outlines methods/behaviors required of classes that are created for
  * analyzing data.
- * 
+ *
  * @author Jonah Cruz
  * @version 1.0
  * @date 3/2/17
@@ -20,8 +20,8 @@ public interface DataAnalyzer {
 
 	/**
 	 * Analyzes the data passed in to be displayed.
-	 * @param args - command line arguments passed in (includes in file name and 
+	 * @param args - command line arguments passed in (includes in file name and
 	 * out file name)
 	 */
-	public List<String[]> analyze(List<String[]> data, List<String> filters); 
+	public void analyze(String fileName); 
 }

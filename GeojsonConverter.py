@@ -9,12 +9,12 @@ rawData = csv.reader(open(input_file, 'rb'), dialect='excel')
 # the template. where data from the csv will be formatted to geojson
 template = \
     ''' \
-    { 
+    {
             "type" : "Feature",
             "geometry" : {
                 "type" : "Point",
-                "coordinates" : ["%s","%s"]},
-            "properties" : { 
+                "coordinates" : [%s,%s]},
+            "properties" : {
 %s
             }
         }'''
@@ -22,12 +22,13 @@ template = \
 # the head of the geojson file
 output = \
     ''' \
-{ "type" : "Feature Collection",
-    {"features" : [
+eqfeed_callback(
+{ "type" : "FeatureCollection",
+    "features": [
     '''
 
 row_count = sum(1 for row in rawData)
-rawData = csv.reader(open('outTest.csv', 'rb'), dialect='excel')
+rawData = csv.reader(open('Formatted_nepal.csv', 'rb'), dialect='excel')
 header = rawData.next();
 column_count = len(header)
 
@@ -40,7 +41,7 @@ iter = 0
 
 #convert the rest of the rows
 for row in rawData:
-     
+
     print "%s" % iter
     #print row
 
@@ -53,7 +54,7 @@ for row in rawData:
     lon = row[6]
     #name = row[2]
     #pop = row[4]
-    output += "\n\t" + template % (lat, lon, properties)
+    output += "\n\t" + template % (lon, lat, properties)
     if iter < row_count - 2:
         output += ","
 
@@ -62,9 +63,9 @@ for row in rawData:
 output += \
     ''' \
     ]
-}
+});
     '''
-    
+
 # opens an geoJSON file to write the output to
 outFileHandle = open(output_file, "w")
 outFileHandle.write(output)

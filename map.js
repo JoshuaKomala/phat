@@ -13,7 +13,7 @@ function initMap() {
   var script = document.createElement('script');
   // This example uses a local copy of the GeoJSON stored at
   // http://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/2.5_week.geojsonp
-  script.src = 'geo2.js';
+  script.src = 'converted_nepal.js';
   document.getElementsByTagName('head')[0].appendChild(script);
 }
 
@@ -32,12 +32,15 @@ window.eqfeed_callback = function(results) {
 		google.maps.event.addListener(marker, 'click', ((x)=>function() {
 
       let infoStr = "";
+			let inc = 0;
 			for (var key in results.features[x].properties){
 
-				if(results.features[x].properties.hasOwnProperty(key)){
+				if(results.features[x].properties.hasOwnProperty(key) && inc >= 11){
 					infoStr += '<div><strong>' + key + ': </strong><br>'  + results.features[x].properties[key]+ '</div>';
 					//console.log(results.features[x].properties[key]);
 				}
+				inc++;
+
 			}
 
       infowindow.setContent(infoStr);

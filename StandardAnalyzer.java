@@ -7,10 +7,10 @@ import java.util.List;
 
 /**
  * Standard Analyzer Class.
- * 
+ *
  * <p>Class implementation of the DataAnalyzer interface for basic
  * data analysis.
- * 
+ *
  * @author Jonah Cruz
  * @version 1.0
  * @date 3/8/17
@@ -23,7 +23,7 @@ public class StandardAnalyzer implements DataAnalyzer {
 	 * @param filters - Filters to specify how to analyze data
 	 * @return - The formated data ready to be displayed
 	 */
-	public List<String[]> analyze(List<String[]> data, List<String> filters) {
-		return null;
+	public void analyze(String fileName) {
+		
 	}
 }

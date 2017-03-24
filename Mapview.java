@@ -10,8 +10,8 @@ import javafx.scene.paint.Color;
 import javafx.scene.web.WebEngine;
 import javafx.scene.web.WebView;
 import javafx.stage.Stage;
- 
- 
+
+
 public class Mapview extends Application {
 	private Scene scene;
 	@Override public void start(Stage stage) {
@@ -21,25 +21,25 @@ public class Mapview extends Application {
 		stage.setScene(scene);
 		stage.show();
 	}
- 
-	public static void main(String[] args){
+
+	public static void run(String[] args) {
 		launch(args);
 	}
 }
 
 class Browser extends Region {
- 
+
 	final WebView browser = new WebView();
 	final WebEngine webEngine = browser.getEngine();
-	 
+
 	public Browser() {
 		// load the web page
-		
+
 		webEngine.load(getClass().getResource("map.html").toExternalForm());
-		
+
 		//add the web view to the scene
 		getChildren().add(browser);
- 
+
 	}
-	 
+
 }
